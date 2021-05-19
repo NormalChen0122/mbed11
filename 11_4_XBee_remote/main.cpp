@@ -2,7 +2,7 @@
 using namespace std;
 
 static BufferedSerial pc(STDIO_UART_TX, STDIO_UART_RX);
-static BufferedSerial xbee(D1, D0);
+static BufferedSerial xbee(D1, D0); // TX RX
 
 EventQueue queue(32 * EVENTS_EVENT_SIZE);
 Thread t;

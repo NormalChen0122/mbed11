@@ -7,10 +7,12 @@ static BufferedSerial xbee(D1, D0);
 
 EventQueue queue(32 * EVENTS_EVENT_SIZE);
 Thread t;
-
 RpcDigitalOut myled1(LED1,"myled1");
 RpcDigitalOut myled2(LED2,"myled2");
 RpcDigitalOut myled3(LED3,"myled3");
+
+void LEDControl(Arguments *in, Reply *out);
+RPCFunction rpcLED(&LEDControl, "LEDControl");
 
 void xbee_rx_interrupt(void);
 void xbee_rx(void);
@@ -117,4 +119,10 @@ void check_addr(char *xbee_reply, char *messenger){
    xbee_reply[1] = '\0';
    xbee_reply[2] = '\0';
    xbee_reply[3] = '\0';
+}
+
+void LEDControl(Arguments *in, Reply *out)
+{
+   //int i;
+   out = "Hi";
 }

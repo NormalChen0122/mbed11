@@ -65,5 +65,8 @@ while True:
 
     s.write("/myled1/write 0\r".encode())
     time.sleep(1)
+    s.write("/LEDControl/run\r".encode())
+    time.sleep(1)
+    
 
 s.close()
